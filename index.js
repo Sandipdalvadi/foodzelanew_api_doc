@@ -398,22 +398,20 @@
  *	  }
  */
 
-
 /**
- * @api {get} /termsCondition/{lang} Terms Condition View
- * @apiGroup Terms & Condition
- * @apiParam {String} lang Language(lang=en or lang=ar)
- * @apiSuccess Load Terms and condition view
+ * @api {get} /termsCondition/{lang} Terms & Condition View
+ * @apiGroup Terms Condition
+ * @apiParam {String} lang Language Code(en or ar)
+ * @apiSuccess {Load_view} Load_view Terms & condition view load successfully
  * @apiSuccessExample {json} Success
- * Load Terms and condition view
+ * Terms and condition view load successfully
  */
-
 
 /**
  * @api {get} /aboutUs/{lang} About Us View
  * @apiGroup About Us
- * @apiParam {String} lang Language(lang=en or lang=ar)
- * @apiSuccess Load About Us view
+ * @apiParam {String} lang Language Code(en or ar)
+ * @apiSuccess {Load_view} Load_view About Us view load successfully
  * @apiSuccessExample {json} Success
- * Load About Us view
+ * About Us view load successfully
  */

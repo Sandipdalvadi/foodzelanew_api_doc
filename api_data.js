@@ -12,7 +12,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "lang",
-            "description": "<p>Language(lang=en or lang=ar)</p>"
+            "description": "<p>Language Code(en or ar)</p>"
           }
         ]
       }
@@ -22,16 +22,17 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Load_view",
             "optional": false,
-            "field": "Load",
-            "description": "<p>About Us view</p>"
+            "field": "Load_view",
+            "description": "<p>About Us view load successfully</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success",
-          "content": "Load About Us view",
+          "content": "About Us view load successfully",
           "type": "json"
         }
       ]
@@ -323,8 +324,8 @@ define({ "api": [
   {
     "type": "get",
     "url": "/termsCondition/{lang}",
-    "title": "Terms Condition View",
-    "group": "Terms_&_Condition",
+    "title": "Terms & Condition View",
+    "group": "Terms_Condition",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -333,7 +334,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "lang",
-            "description": "<p>Language(lang=en or lang=ar)</p>"
+            "description": "<p>Language Code(en or ar)</p>"
           }
         ]
       }
@@ -343,23 +344,24 @@ define({ "api": [
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "Load_view",
             "optional": false,
-            "field": "Load",
-            "description": "<p>Terms and condition view</p>"
+            "field": "Load_view",
+            "description": "<p>Terms &amp; condition view load successfully</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Success",
-          "content": "Load Terms and condition view",
+          "content": "Terms and condition view load successfully",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
     "filename": "./index.js",
-    "groupTitle": "Terms_&_Condition",
+    "groupTitle": "Terms_Condition",
     "name": "GetTermsconditionLang"
   },
   {
