@@ -1,0 +1,12 @@
+ 1. Create project folder
+ 
+ 2. Create apidoc.json file with the following content:
+ 
+ 3. Create index.js file with API documentation content
+ 
+ 4. Run the following command to generate the HTML for API documentation content in step 3.
+ apidoc -i ./project_name/ -o ./project_name/
+
+
+C:\xampp\htdocs\admin_panel_api_doc>apidoc -i ./ -o ./
+http://localhost/admin_panel_api_doc
