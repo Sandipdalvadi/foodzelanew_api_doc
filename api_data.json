@@ -44,6 +44,178 @@
   },
   {
     "type": "post",
+    "url": "/api/addBankAccount",
+    "title": "Add Bank Account",
+    "group": "Bank",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "loginToken",
+            "description": "<p>Login Token(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "userId",
+            "description": "<p>User Id(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Name(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "bankId",
+            "description": "<p>Bank Id(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "accountNumber",
+            "description": "<p>Account Number(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "city",
+            "description": "<p>City(required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "success",
+            "description": "<p>{1:success, 0:fail}</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>{message:'Bank account saved successfully'}</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "result",
+            "description": "<p>Bank Account object</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success",
+          "content": "HTTP/1.1 200 OK\n{\n   \"success\": 1,\n   \"message\": \"Bank account saved successfully.\",\n   \"result\": {\n       \"id\": 5,\n       \"name\": \"Sandip\",\n       \"bankName\": \"State bank of india\",\n       \"bankId\": 1,\n       \"accountNumber\": \"123456789\",\n       \"city\": \"Dhanala\"\n   }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Unauthorized access error",
+          "content": "HTTP/1.1 401 Unauthorized\n {\n    \"status\": 0,\n    \"error\": \"Unauthorized access\"\n}",
+          "type": "json"
+        },
+        {
+          "title": "Missing perameter error",
+          "content": "HTTP/1.1 422 Unprocessable Entity\n\t  {\n      \"status\": 0,\n\t\t \"error\": \"All Fields Are Required.\"\n\t  }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./index.js",
+    "groupTitle": "Bank",
+    "name": "PostApiAddbankaccount"
+  },
+  {
+    "type": "post",
+    "url": "/api/bankList",
+    "title": "Bank List",
+    "group": "Bank",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "loginToken",
+            "description": "<p>Login Token(required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "success",
+            "description": "<p>{1:success, 0:fail}</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>{message:'Bank list loaded successfully'}</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Array",
+            "optional": false,
+            "field": "result",
+            "description": "<p>Bank List array object</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success",
+          "content": "HTTP/1.1 200 OK\n   {\n       \"success\": 1,\n       \"message\": \"Bank list loaded successfully.\",\n       \"result\": [\n           {\n               \"id\": 1,\n               \"name\": \"State bank of india\"\n           },\n           {\n               \"id\": 2,\n               \"name\": \"Saurashtra gramin bank\"\n           },\n           {\n               \"id\": 3,\n               \"name\": \"Central bank of india\"\n           }\n       ]\n   }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Unauthorized access error",
+          "content": "HTTP/1.1 401 Unauthorized\n {\n    \"status\": 0,\n    \"error\": \"Unauthorized access\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./index.js",
+    "groupTitle": "Bank",
+    "name": "PostApiBanklist"
+  },
+  {
+    "type": "post",
     "url": "/api/categoriesList",
     "title": "Category List",
     "group": "Category",
@@ -96,7 +268,7 @@
       "examples": [
         {
           "title": "Success",
-          "content": "HTTP/1.1 200 OK\n   {\n\t\t\"success\": 1,\n\t\t\"message\": \"Password Updated Successfully.\"\n   }",
+          "content": "HTTP/1.1 200 OK\n{\n \"success\": 1,\n \"message\": \"Category list loaded successfully.\",\n \"totalCount\": 1,\n \"result\": [\n     {\n         \"id\": 2,\n         \"name_en\": \"Fast Foods\",\n         \"name_ar\": \"وجبات سريعة\",\n         \"image\": \"http://foodzela.thinkandsolutions.com/public/categories/1608185347.depositphotos_24762569-stock-photo-fast-food-hamburger-hot-dog.jpg\"\n     }\n ]\n}",
           "type": "json"
         }
       ]
@@ -148,8 +320,99 @@
             "group": "Parameter",
             "type": "String",
             "optional": false,
+            "field": "json_content.description",
+            "description": "<p>Login Token(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
             "field": "json_content.loginToken",
             "description": "<p>Login Token(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "json_content.address",
+            "description": "<p>Address(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "json_content.latitude",
+            "description": "<p>Latitude(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "json_content.longitude",
+            "description": "<p>Longitude(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "json_content.phone",
+            "description": "<p>Phone(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "json_content.mobile",
+            "description": "<p>Mobile(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "json_content.information",
+            "description": "<p>Information(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "json_content.deliveryFee",
+            "description": "<p>Delivery Fee(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "json_content.adminCommission",
+            "description": "<p>Admin Commission(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "json_content.openTime",
+            "description": "<p>Restaurent open time(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "json_content.closeTime",
+            "description": "<p>Restaurent close time(required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "json_content.isOpen",
+            "description": "<p>Restaurent is open(required, 0=not open, 1= open)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "optional": false,
+            "field": "json_content.",
+            "description": "<p>&quot;categories&quot; Category Id Array(required)</p>"
           }
         ]
       }
@@ -183,7 +446,7 @@
       "examples": [
         {
           "title": "Success",
-          "content": "HTTP/1.1 200 OK\n   {\n\t\t\"success\": 1,\n\t\t\"message\": \"Password Updated Successfully.\"\n   }",
+          "content": "HTTP/1.1 200 OK\n{\n   \"success\": 1,\n   \"message\": \"Restaurent Added Succeessfully\",\n   \"result\": {\n       \"id\": 6,\n       \"name\": \"Ganesh restaurent\",\n       \"description\": \"New Description\",\n       \"address\": \"New Address\",\n       \"latitude\": \"12.111\",\n       \"longitude\": \"22.333\",\n       \"phone\": \"123455668\",\n       \"mobile\": \"12443646\",\n       \"information\": \"New Information\",\n       \"deliveryFee\": \"11\",\n       \"adminCommission\": \"30\",\n       \"ownerLogo\": \"http://foodzela.thinkandsolutions.com/public/default_images/blank_image.jpeg\"\n   }\n}",
           "type": "json"
         }
       ]
@@ -282,7 +545,7 @@
       "examples": [
         {
           "title": "Success",
-          "content": "HTTP/1.1 200 OK\n   {\n\t\t\"success\": 1,\n\t\t\"message\": \"Password Updated Successfully.\"\n   }",
+          "content": "HTTP/1.1 200 OK\n{\n   \"success\": 1,\n   \"message\": \"Document verified Succeessfully\",\n   \"result\": {\n       \"id\": \"5\",\n       \"name\": \"Sandy\",\n       \"email\": \"sandip@gmail.com\",\n       \"role\": \"2\",\n       \"phone\": \"123456788\",\n       \"profilePic\": \"http://foodzela.thinkandsolutions.com/public/profile_pic/1608829166.1607234811.logo.png\",\n       \"isSocial\": \"0\",\n       \"socialType\": \"\",\n       \"socialId\": \"\",\n       \"isEmailVerified\": \"0\",\n       \"isPhoneVerified\": \"0\",\n       \"deviceToken\": \"sdfdfhiuhdf\",\n       \"deviceType\": 1,\n       \"loginToken\": \"2XyE9fjhBOlb0ksFo3an\",\n       \"instagram\": \"\",\n       \"snap\": \"\",\n       \"languageCode\": \"en\",\n       \"address\": \"ahmedabad\",\n       \"latitude\": \"43.33222\",\n       \"longitude\": \"123.3444\",\n       \"is_document_verified\": 1,\n       \"liceneseDelivery\": \"http://foodzela.thinkandsolutions.com/public/liceneseDelivery/1608829940.image-logo.png\",\n       \"certificationShop\": \"http://foodzela.thinkandsolutions.com/public/certificationShop/1608829940.1602658218915.JPEG\",\n       \"idProof\": \"http://foodzela.thinkandsolutions.com/public/idProof/1608829940.1607234811.logo.png\"\n   }\n}",
           "type": "json"
         }
       ]
@@ -576,7 +839,7 @@
       "examples": [
         {
           "title": "Success",
-          "content": "HTTP/1.1 200 OK\n   {\n\t\t\"success\": 1,\n\t\t\"message\": \"Password Reset Link Sent To E-mail Successfully.\"\n   }",
+          "content": "HTTP/1.1 200 OK\n{\n   \"success\": 1,\n   \"message\": \"Profile Updated Succeessfully\",\n   \"result\": {\n       \"id\": \"5\",\n       \"name\": \"Sandy\",\n       \"email\": \"sandip@gmail.com\",\n       \"role\": \"2\",\n       \"phone\": \"123456788\",\n       \"profilePic\": \"http://foodzela.thinkandsolutions.com/public/profile_pic/1608829166.1607234811.logo.png\",\n       \"isSocial\": \"0\",\n       \"socialType\": \"\",\n       \"socialId\": \"\",\n       \"isEmailVerified\": \"0\",\n       \"isPhoneVerified\": \"0\",\n       \"deviceToken\": \"sdfdfhiuhdf\",\n       \"deviceType\": 1,\n       \"loginToken\": \"2XyE9fjhBOlb0ksFo3an\",\n       \"instagram\": \"\",\n       \"snap\": \"\",\n       \"languageCode\": \"en\",\n       \"address\": \"ahmedabad\",\n       \"latitude\": \"43.33222\",\n       \"longitude\": \"123.3444\",\n       \"is_document_verified\": 0\n   }\n}",
           "type": "json"
         }
       ]
@@ -730,7 +993,7 @@
       "examples": [
         {
           "title": "Success",
-          "content": "HTTP/1.1 200 OK\n   {\n\t\t\"success\": 1,\n\t\t\"message\": \"Password Updated Successfully.\"\n   }",
+          "content": "HTTP/1.1 200 OK\n{\n   \"success\": 1,\n   \"message\": \"Profile Detail get Succeessfully\",\n   \"result\": {\n       \"id\": \"5\",\n       \"name\": \"Sandy\",\n       \"email\": \"sandip@gmail.com\",\n       \"role\": \"2\",\n       \"phone\": \"123456788\",\n       \"profilePic\": \"http://foodzela.thinkandsolutions.com/public/profile_pic/1608829166.1607234811.logo.png\",\n       \"isSocial\": \"0\",\n       \"socialType\": \"\",\n       \"socialId\": \"\",\n       \"isEmailVerified\": \"0\",\n       \"isPhoneVerified\": \"0\",\n       \"deviceToken\": \"sdfdfhiuhdf\",\n       \"deviceType\": 1,\n       \"loginToken\": \"2XyE9fjhBOlb0ksFo3an\",\n       \"instagram\": \"\",\n       \"snap\": \"\",\n       \"languageCode\": \"en\",\n       \"address\": \"ahmedabad\",\n       \"latitude\": \"43.33222\",\n       \"longitude\": \"123.3444\",\n       \"is_document_verified\": 0\n   }\n}",
           "type": "json"
         }
       ]
@@ -834,7 +1097,7 @@
       "examples": [
         {
           "title": "Success",
-          "content": "HTTP/1.1 200 OK\n   {\n\t\t\"status\": false,\n\t\t\"message\": \"Email does not exist.\"\n   }",
+          "content": "HTTP/1.1 200 OK\n{\n   \"success\": 1,\n   \"message\": \"Login Successfully\",\n   \"result\": {\n       \"id\": \"18\",\n       \"name\": \"dalvadi sandip\",\n       \"email\": \"dalvadisandip123@gmail.com\",\n       \"role\": \"2\",\n       \"phone\": \"78742900666\",\n       \"profilePic\": \"http://foodzela.thinkandsolutions.com/public/default_images/default_user.jpg\",\n       \"isSocial\": \"0\",\n       \"socialType\": \"\",\n       \"socialId\": \"\",\n       \"isEmailVerified\": 1,\n       \"isPhoneVerified\": 1,\n       \"deviceToken\": \"sdfdfhiuhdf\",\n       \"deviceType\": \"1\",\n       \"loginToken\": \"XJRpPEn4O8NYAG1sfK9v\",\n       \"instagram\": \"\",\n       \"snap\": \"\",\n       \"languageCode\": \"en\",\n       \"address\": \"dhanala\",\n       \"latitude\": \"12.333\",\n       \"longitude\": \"34.32211\",\n       \"is_document_verified\": 0\n   }\n}",
           "type": "json"
         }
       ]
@@ -932,7 +1195,7 @@
       "examples": [
         {
           "title": "Success",
-          "content": "HTTP/1.1 200 OK\n   {\n\t\t\"success\": 1,\n\t\t\"message\": \"Password Updated Successfully.\"\n   }",
+          "content": "HTTP/1.1 200 OK\n{\n   \"success\": 1,\n   \"message\": \"Password updated Succeessfully\",\n   \"result\": {\n       \"id\": \"3\",\n       \"name\": \"sandip\",\n       \"email\": \"dalvadisandip12@gmail.com\",\n       \"role\": \"2\",\n       \"phone\": \"123456\",\n       \"profilePic\": \"http://foodzela.thinkandsolutions.com/public/default_images/default_user.jpg\",\n       \"isSocial\": \"0\",\n       \"socialType\": \"\",\n       \"socialId\": \"\",\n       \"isEmailVerified\": \"0\",\n       \"isPhoneVerified\": \"0\",\n       \"deviceToken\": \"acddvc\",\n       \"deviceType\": 1,\n       \"loginToken\": \"4Uv7Hc3lKMCF1s9qAez2\",\n       \"instagram\": \"\",\n       \"snap\": \"\",\n       \"languageCode\": \"en\",\n       \"address\": \"\",\n       \"latitude\": \"\",\n       \"longitude\": \"\",\n       \"is_document_verified\": 1,\n       \"liceneseDelivery\": \"http://foodzela.thinkandsolutions.com/public/liceneseDelivery/1608745836.1607234811.logo.png\",\n       \"certificationShop\": \"http://foodzela.thinkandsolutions.com/public/certificationShop/1608745836.1602658218915.JPEG\",\n       \"idProof\": null\n   }\n}",
           "type": "json"
         }
       ]
@@ -1094,7 +1357,7 @@
       "examples": [
         {
           "title": "Success",
-          "content": "HTTP/1.1 200 OK\n   {\n\t\t\"status\": true,\n\t\t\"error\": \"\",\n\t\t\"access_token\": \"$2y$10$GCTdtvyphepag1RdAZz8XeZd2ZDKC7./nVvEfLTFYCtDotbcq1JQ.\",\n\t\t\"user\": {\n\t\t\t\"id\": 1,\n\t\t\t\"email\": \"engr.numaan@yahoo.com\",\n\t\t\t\"agreed\": \"1\",\n\t\t\t\"email_verified_at\": \"2020-09-08 17:01:53\",\n\t\t\t\"created_at\": \"2020-09-08 17:01:53\",\n\t\t\t\"updated_at\": \"2020-09-08 17:01:53\",\n\t\t\t\"verify_code\": null,\n\t\t\t\"ring_wallet_address\": null,\n\t\t\t\"ethereum_wallet_address\": null,\n\t\t\t\"KYC_result\": \"N\",\n\t\t\t\"description\": null,\n\t\t\t\"inactive\": 0,\n\t\t\t\"user_grade_id\": null,\n         \"original_file\": \"http://54.180.80.195/user/profile_image/cHVibGljL3VzZXJfcHJvZmlsZS9BYWhCakZ5QWxIV2kwUURlMnVpTUdQVlBvVklTd1lnYTl6OGVuMUdyLmpwZWd8aW1hZ2VfcGlja2VyX0ExMDA0QjBELTVGQjctNDg3OC05MTY4LTZEOUY5NUUwN0YyMy00MjkyOS0wMDAwMTdENDAwNDQwNURENjI0MkVBMjItNEM4My00RDNELTk1ODgtMzFFRkZEN0FGMkQ0X2NvbXByZXNzZWQuanBn\",\n         \"stored_file\": \"http://54.180.80.195/user/profile_image/cHVibGljL3VzZXJfcHJvZmlsZS9BYWhCakZ5QWxIV2kwUURlMnVpTUdQVlBvVklTd1lnYTl6OGVuMUdyLmpwZWd8aW1hZ2VfcGlja2VyX0ExMDA0QjBELTVGQjctNDg3OC05MTY4LTZEOUY5NUUwN0YyMy00MjkyOS0wMDAwMTdENDAwNDQwNURENjI0MkVBMjItNEM4My00RDNELTk1ODgtMzFFRkZEN0FGMkQ0X2NvbXByZXNzZWQuanBn\",\n         \"image\":\"http://54.180.80.195/user/profile_image/cHVibGljL3VzZXJfcHJvZmlsZS9BYWhCakZ5QWxIV2kwUURlMnVpTUdQVlBvVklTd1lnYTl6OGVuMUdyLmpwZWd8aW1hZ2VfcGlja2VyX0ExMDA0QjBELTVGQjctNDg3OC05MTY4LTZEOUY5NUUwN0YyMy00MjkyOS0wMDAwMTdENDAwNDQwNURENjI0MkVBMjItNEM4My00RDNELTk1ODgtMzFFRkZEN0FGMkQ0X2NvbXByZXNzZWQuanBn\",\n         \"kong\": 20,\n         \"bonus_kong\": 0,\n         \"total\": 20\n\t\t}\n\t  }",
+          "content": "HTTP/1.1 200 OK\n{\n   \"success\": 1,\n   \"message\": \"User Registered Succeessfully\",\n   \"result\": {\n       \"id\": \"18\",\n       \"name\": \"dalvadi sandip\",\n       \"email\": \"dalvadisandip123@gmail.com\",\n       \"role\": \"2\",\n       \"phone\": \"78742900666\",\n       \"profilePic\": \"http://foodzela.thinkandsolutions.com/public/default_images/default_user.jpg\",\n       \"isSocial\": \"0\",\n       \"socialType\": \"\",\n       \"socialId\": \"\",\n       \"isEmailVerified\": \"1\",\n       \"isPhoneVerified\": \"1\",\n       \"deviceToken\": \"fOUgZJJgRSu5MM8tfZ4YlD:APA91bHsI8ogTMpf_1lcAjXVInyTzZsaqKb5I-t5ZELe3VWM9RfxrBpiCi-cDEeVdooBbl8P0-qF94DHCpfcUgSj4ldQ10UzJ1OhvNlfkiEjrwKZn0dbVVF1pNQaFowG9dtThBWjKDYV\",\n       \"deviceType\": \"1\",\n       \"loginToken\": \"8m1OV98vZ4YXrgEHBMz5\",\n       \"instagram\": \"\",\n       \"snap\": \"\",\n       \"languageCode\": \"en\",\n       \"address\": \"dhanala\",\n       \"latitude\": \"12.333\",\n       \"longitude\": \"34.32211\",\n       \"is_document_verified\": 0\n   }\n}",
           "type": "json"
         }
       ]

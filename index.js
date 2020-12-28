@@ -20,32 +20,33 @@
  * @apiSuccess {Object} result User object
  * @apiSuccessExample {json} Success
  * HTTP/1.1 200 OK
- *    {
- *		"status": true,
- *		"error": "",
- *		"access_token": "$2y$10$GCTdtvyphepag1RdAZz8XeZd2ZDKC7./nVvEfLTFYCtDotbcq1JQ.",
- *		"user": {
- *			"id": 1,
- *			"email": "engr.numaan@yahoo.com",
- *			"agreed": "1",
- *			"email_verified_at": "2020-09-08 17:01:53",
- *			"created_at": "2020-09-08 17:01:53",
- *			"updated_at": "2020-09-08 17:01:53",
- *			"verify_code": null,
- *			"ring_wallet_address": null,
- *			"ethereum_wallet_address": null,
- *			"KYC_result": "N",
- *			"description": null,
- *			"inactive": 0,
- *			"user_grade_id": null,
- *          "original_file": "http://54.180.80.195/user/profile_image/cHVibGljL3VzZXJfcHJvZmlsZS9BYWhCakZ5QWxIV2kwUURlMnVpTUdQVlBvVklTd1lnYTl6OGVuMUdyLmpwZWd8aW1hZ2VfcGlja2VyX0ExMDA0QjBELTVGQjctNDg3OC05MTY4LTZEOUY5NUUwN0YyMy00MjkyOS0wMDAwMTdENDAwNDQwNURENjI0MkVBMjItNEM4My00RDNELTk1ODgtMzFFRkZEN0FGMkQ0X2NvbXByZXNzZWQuanBn",
- *          "stored_file": "http://54.180.80.195/user/profile_image/cHVibGljL3VzZXJfcHJvZmlsZS9BYWhCakZ5QWxIV2kwUURlMnVpTUdQVlBvVklTd1lnYTl6OGVuMUdyLmpwZWd8aW1hZ2VfcGlja2VyX0ExMDA0QjBELTVGQjctNDg3OC05MTY4LTZEOUY5NUUwN0YyMy00MjkyOS0wMDAwMTdENDAwNDQwNURENjI0MkVBMjItNEM4My00RDNELTk1ODgtMzFFRkZEN0FGMkQ0X2NvbXByZXNzZWQuanBn",
- *          "image":"http://54.180.80.195/user/profile_image/cHVibGljL3VzZXJfcHJvZmlsZS9BYWhCakZ5QWxIV2kwUURlMnVpTUdQVlBvVklTd1lnYTl6OGVuMUdyLmpwZWd8aW1hZ2VfcGlja2VyX0ExMDA0QjBELTVGQjctNDg3OC05MTY4LTZEOUY5NUUwN0YyMy00MjkyOS0wMDAwMTdENDAwNDQwNURENjI0MkVBMjItNEM4My00RDNELTk1ODgtMzFFRkZEN0FGMkQ0X2NvbXByZXNzZWQuanBn",
- *          "kong": 20,
- *          "bonus_kong": 0,
- *          "total": 20
- *		}
- *	  }
+ *{
+ *    "success": 1,
+ *    "message": "User Registered Succeessfully",
+ *    "result": {
+ *        "id": "18",
+ *        "name": "dalvadi sandip",
+ *        "email": "dalvadisandip123@gmail.com",
+ *        "role": "2",
+ *        "phone": "78742900666",
+ *        "profilePic": "http://foodzela.thinkandsolutions.com/public/default_images/default_user.jpg",
+ *        "isSocial": "0",
+ *        "socialType": "",
+ *        "socialId": "",
+ *        "isEmailVerified": "1",
+ *        "isPhoneVerified": "1",
+ *        "deviceToken": "fOUgZJJgRSu5MM8tfZ4YlD:APA91bHsI8ogTMpf_1lcAjXVInyTzZsaqKb5I-t5ZELe3VWM9RfxrBpiCi-cDEeVdooBbl8P0-qF94DHCpfcUgSj4ldQ10UzJ1OhvNlfkiEjrwKZn0dbVVF1pNQaFowG9dtThBWjKDYV",
+ *        "deviceType": "1",
+ *        "loginToken": "8m1OV98vZ4YXrgEHBMz5",
+ *        "instagram": "",
+ *        "snap": "",
+ *        "languageCode": "en",
+ *        "address": "dhanala",
+ *        "latitude": "12.333",
+ *        "longitude": "34.32211",
+ *        "is_document_verified": 0
+ *    }
+ *}
  * @apiErrorExample {json} Perameter required error
  * HTTP/1.1 422 Unprocessable Entity
  *	  {
@@ -79,10 +80,33 @@
  * @apiSuccess {Object} result User object
  * @apiSuccessExample {json} Success
  * HTTP/1.1 200 OK
- *    {
- *		"status": false,
- *		"message": "Email does not exist."
+ *{
+ *    "success": 1,
+ *    "message": "Login Successfully",
+ *    "result": {
+ *        "id": "18",
+ *        "name": "dalvadi sandip",
+ *        "email": "dalvadisandip123@gmail.com",
+ *        "role": "2",
+ *        "phone": "78742900666",
+ *        "profilePic": "http://foodzela.thinkandsolutions.com/public/default_images/default_user.jpg",
+ *        "isSocial": "0",
+ *        "socialType": "",
+ *        "socialId": "",
+ *        "isEmailVerified": 1,
+ *        "isPhoneVerified": 1,
+ *        "deviceToken": "sdfdfhiuhdf",
+ *        "deviceType": "1",
+ *        "loginToken": "XJRpPEn4O8NYAG1sfK9v",
+ *        "instagram": "",
+ *        "snap": "",
+ *        "languageCode": "en",
+ *        "address": "dhanala",
+ *        "latitude": "12.333",
+ *        "longitude": "34.32211",
+ *        "is_document_verified": 0
  *    }
+ *}
  * @apiErrorExample {json} Missing perameter error
  * HTTP/1.1 422 Unprocessable Entity
  *	  {
@@ -167,10 +191,33 @@
  * @apiSuccess {Object} result User object
  * @apiSuccessExample {json} Success
  * HTTP/1.1 200 OK
- *    {
- *		"success": 1,
- *		"message": "Password Reset Link Sent To E-mail Successfully."
+ *{
+ *    "success": 1,
+ *    "message": "Profile Updated Succeessfully",
+ *    "result": {
+ *        "id": "5",
+ *        "name": "Sandy",
+ *        "email": "sandip@gmail.com",
+ *        "role": "2",
+ *        "phone": "123456788",
+ *        "profilePic": "http://foodzela.thinkandsolutions.com/public/profile_pic/1608829166.1607234811.logo.png",
+ *        "isSocial": "0",
+ *        "socialType": "",
+ *        "socialId": "",
+ *        "isEmailVerified": "0",
+ *        "isPhoneVerified": "0",
+ *        "deviceToken": "sdfdfhiuhdf",
+ *        "deviceType": 1,
+ *        "loginToken": "2XyE9fjhBOlb0ksFo3an",
+ *        "instagram": "",
+ *        "snap": "",
+ *        "languageCode": "en",
+ *        "address": "ahmedabad",
+ *        "latitude": "43.33222",
+ *        "longitude": "123.3444",
+ *        "is_document_verified": 0
  *    }
+ *}
  * @apiErrorExample {json} Unauthorized access error
  * HTTP/1.1 401 Unauthorized
  *  {
@@ -244,10 +291,33 @@
  * @apiSuccess {Object} result  User object
  * @apiSuccessExample {json} Success
  * HTTP/1.1 200 OK
- *    {
- *		"success": 1,
- *		"message": "Password Updated Successfully."
+ *{
+ *    "success": 1,
+ *    "message": "Profile Detail get Succeessfully",
+ *    "result": {
+ *        "id": "5",
+ *        "name": "Sandy",
+ *        "email": "sandip@gmail.com",
+ *        "role": "2",
+ *        "phone": "123456788",
+ *        "profilePic": "http://foodzela.thinkandsolutions.com/public/profile_pic/1608829166.1607234811.logo.png",
+ *        "isSocial": "0",
+ *        "socialType": "",
+ *        "socialId": "",
+ *        "isEmailVerified": "0",
+ *        "isPhoneVerified": "0",
+ *        "deviceToken": "sdfdfhiuhdf",
+ *        "deviceType": 1,
+ *        "loginToken": "2XyE9fjhBOlb0ksFo3an",
+ *        "instagram": "",
+ *        "snap": "",
+ *        "languageCode": "en",
+ *        "address": "ahmedabad",
+ *        "latitude": "43.33222",
+ *        "longitude": "123.3444",
+ *        "is_document_verified": 0
  *    }
+ *}
  * @apiErrorExample {json} Unauthorized access error
  * HTTP/1.1 401 Unauthorized
  *  {
@@ -278,10 +348,36 @@
  * @apiSuccess {Object} result  User object
  * @apiSuccessExample {json} Success
  * HTTP/1.1 200 OK
- *    {
- *		"success": 1,
- *		"message": "Password Updated Successfully."
+ *{
+ *    "success": 1,
+ *    "message": "Password updated Succeessfully",
+ *    "result": {
+ *        "id": "3",
+ *        "name": "sandip",
+ *        "email": "dalvadisandip12@gmail.com",
+ *        "role": "2",
+ *        "phone": "123456",
+ *        "profilePic": "http://foodzela.thinkandsolutions.com/public/default_images/default_user.jpg",
+ *        "isSocial": "0",
+ *        "socialType": "",
+ *        "socialId": "",
+ *        "isEmailVerified": "0",
+ *        "isPhoneVerified": "0",
+ *        "deviceToken": "acddvc",
+ *        "deviceType": 1,
+ *        "loginToken": "4Uv7Hc3lKMCF1s9qAez2",
+ *        "instagram": "",
+ *        "snap": "",
+ *        "languageCode": "en",
+ *        "address": "",
+ *        "latitude": "",
+ *        "longitude": "",
+ *        "is_document_verified": 1,
+ *        "liceneseDelivery": "http://foodzela.thinkandsolutions.com/public/liceneseDelivery/1608745836.1607234811.logo.png",
+ *        "certificationShop": "http://foodzela.thinkandsolutions.com/public/certificationShop/1608745836.1602658218915.JPEG",
+ *        "idProof": null
  *    }
+ *}
  * @apiErrorExample {json} Missing perameter error
  * HTTP/1.1 422 Unprocessable Entity
  *	  {
@@ -307,10 +403,19 @@
  * @apiSuccess {Array} result  Category array object
  * @apiSuccessExample {json} Success
  * HTTP/1.1 200 OK
- *    {
- *		"success": 1,
- *		"message": "Password Updated Successfully."
- *    }
+ * {
+ *  "success": 1,
+ *  "message": "Category list loaded successfully.",
+ *  "totalCount": 1,
+ *  "result": [
+ *      {
+ *          "id": 2,
+ *          "name_en": "Fast Foods",
+ *          "name_ar": "وجبات سريعة",
+ *          "image": "http://foodzela.thinkandsolutions.com/public/categories/1608185347.depositphotos_24762569-stock-photo-fast-food-hamburger-hot-dog.jpg"
+ *      }
+ *  ]
+ * }
  * @apiErrorExample {json} Category not found
  * HTTP/1.1 422 Unprocessable Entity
  *	  {
@@ -325,16 +430,43 @@
  * @apiParam {File} ownerLogo Owner Logo
  * @apiParam {String} json_content.userId Restaurent Owner Id(required)
  * @apiParam {String} json_content.name Restaurent Name(required)
+ * @apiParam {String} json_content.description Login Token(required)
  * @apiParam {String} json_content.loginToken Login Token(required)
+ * @apiParam {String} json_content.address Address(required)
+ * @apiParam {String} json_content.latitude Latitude(required)
+ * @apiParam {String} json_content.longitude Longitude(required)
+ * @apiParam {String} json_content.phone Phone(required)
+ * @apiParam {String} json_content.mobile Mobile(required)
+ * @apiParam {String} json_content.information Information(required)
+ * @apiParam {String} json_content.deliveryFee Delivery Fee(required)
+ * @apiParam {String} json_content.adminCommission Admin Commission(required)
+ * @apiParam {String} json_content.openTime Restaurent open time(required)
+ * @apiParam {String} json_content.closeTime Restaurent close time(required)
+ * @apiParam {String} json_content.isOpen Restaurent is open(required, 0=not open, 1= open)
+ * @apiParam {Array} json_content."categories" Category Id Array(required)
  * @apiSuccess {Boolean} success {1:success, 0:fail}
  * @apiSuccess {String} message {message:'Restaurent Added Succeessfully'}
  * @apiSuccess {Object} result  Restaurent object
  * @apiSuccessExample {json} Success
  * HTTP/1.1 200 OK
- *    {
- *		"success": 1,
- *		"message": "Password Updated Successfully."
+ *{
+ *    "success": 1,
+ *    "message": "Restaurent Added Succeessfully",
+ *    "result": {
+ *        "id": 6,
+ *        "name": "Ganesh restaurent",
+ *        "description": "New Description",
+ *        "address": "New Address",
+ *        "latitude": "12.111",
+ *        "longitude": "22.333",
+ *        "phone": "123455668",
+ *        "mobile": "12443646",
+ *        "information": "New Information",
+ *        "deliveryFee": "11",
+ *        "adminCommission": "30",
+ *        "ownerLogo": "http://foodzela.thinkandsolutions.com/public/default_images/blank_image.jpeg"
  *    }
+ *}
  * @apiErrorExample {json} Unauthorized access error
  * HTTP/1.1 401 Unauthorized
  *  {
@@ -362,10 +494,36 @@
  * @apiSuccess {Object} result  User object
  * @apiSuccessExample {json} Success
  * HTTP/1.1 200 OK
- *    {
- *		"success": 1,
- *		"message": "Password Updated Successfully."
+ *{
+ *    "success": 1,
+ *    "message": "Document verified Succeessfully",
+ *    "result": {
+ *        "id": "5",
+ *        "name": "Sandy",
+ *        "email": "sandip@gmail.com",
+ *        "role": "2",
+ *        "phone": "123456788",
+ *        "profilePic": "http://foodzela.thinkandsolutions.com/public/profile_pic/1608829166.1607234811.logo.png",
+ *        "isSocial": "0",
+ *        "socialType": "",
+ *        "socialId": "",
+ *        "isEmailVerified": "0",
+ *        "isPhoneVerified": "0",
+ *        "deviceToken": "sdfdfhiuhdf",
+ *        "deviceType": 1,
+ *        "loginToken": "2XyE9fjhBOlb0ksFo3an",
+ *        "instagram": "",
+ *        "snap": "",
+ *        "languageCode": "en",
+ *        "address": "ahmedabad",
+ *        "latitude": "43.33222",
+ *        "longitude": "123.3444",
+ *        "is_document_verified": 1,
+ *        "liceneseDelivery": "http://foodzela.thinkandsolutions.com/public/liceneseDelivery/1608829940.image-logo.png",
+ *        "certificationShop": "http://foodzela.thinkandsolutions.com/public/certificationShop/1608829940.1602658218915.JPEG",
+ *        "idProof": "http://foodzela.thinkandsolutions.com/public/idProof/1608829940.1607234811.logo.png"
  *    }
+ *}
  * @apiErrorExample {json} Unauthorized access error
  * HTTP/1.1 401 Unauthorized
  *  {
@@ -414,4 +572,79 @@
  * @apiSuccess {Load_view} Load_view About Us view load successfully
  * @apiSuccessExample {json} Success
  * About Us view load successfully
+ */
+
+/**
+ * @api {post} /api/addBankAccount Add Bank Account
+ * @apiGroup Bank
+ * @apiParam {String} loginToken Login Token(required)
+ * @apiParam {String} userId User Id(required)
+ * @apiParam {String} name Name(required)
+ * @apiParam {String} bankId Bank Id(required)
+ * @apiParam {String} accountNumber Account Number(required)
+ * @apiParam {String} city City(required)
+ * @apiSuccess {Boolean} success {1:success, 0:fail}
+ * @apiSuccess {String} message {message:'Bank account saved successfully'}
+ * @apiSuccess {Object} result  Bank Account object
+ * @apiSuccessExample {json} Success
+ * HTTP/1.1 200 OK
+ *{
+ *    "success": 1,
+ *    "message": "Bank account saved successfully.",
+ *    "result": {
+ *        "id": 5,
+ *        "name": "Sandip",
+ *        "bankName": "State bank of india",
+ *        "bankId": 1,
+ *        "accountNumber": "123456789",
+ *        "city": "Dhanala"
+ *    }
+ *}
+ * @apiErrorExample {json} Unauthorized access error
+ * HTTP/1.1 401 Unauthorized
+ *  {
+ *     "status": 0,
+ *     "error": "Unauthorized access"
+ * }
+ * @apiErrorExample {json} Missing perameter error
+ * HTTP/1.1 422 Unprocessable Entity
+ *	  {
+ *       "status": 0,
+ *		 "error": "All Fields Are Required."
+ *	  }
+ */
+
+/**
+ * @api {post} /api/bankList Bank List
+ * @apiGroup Bank
+ * @apiParam {String} loginToken Login Token(required)
+ * @apiSuccess {Boolean} success {1:success, 0:fail}
+ * @apiSuccess {String} message {message:'Bank list loaded successfully'}
+ * @apiSuccess {Array} result  Bank List array object
+ * @apiSuccessExample {json} Success
+ * HTTP/1.1 200 OK
+ *    {
+ *        "success": 1,
+ *        "message": "Bank list loaded successfully.",
+ *        "result": [
+ *            {
+ *                "id": 1,
+ *                "name": "State bank of india"
+ *            },
+ *            {
+ *                "id": 2,
+ *                "name": "Saurashtra gramin bank"
+ *            },
+ *            {
+ *                "id": 3,
+ *                "name": "Central bank of india"
+ *            }
+ *        ]
+ *    }
+ * @apiErrorExample {json} Unauthorized access error
+ * HTTP/1.1 401 Unauthorized
+ *  {
+ *     "status": 0,
+ *     "error": "Unauthorized access"
+ * }
  */
